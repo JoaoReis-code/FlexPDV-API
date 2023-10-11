@@ -1,7 +1,5 @@
 package flex.pdv.api.infra.security;
 
-//Essa classe e um filtro de API e são usados para adicionar lógica extra antes ou depois da execução de um método de ação.
-
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,11 +13,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-//Essa anotação faz com que o Spring faça uma varredura na aplicação, instancie as classes anotadas e injete quaisquer dependências que elas precisem.
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
 
-//@Autowired é usado para injeção automática de dependências no projeto.
     @Autowired
     private TokenSerivce tokenService;
 

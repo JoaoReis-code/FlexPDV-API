@@ -1,11 +1,10 @@
-create table produtos(
+CREATE TABLE produtos(
 
-    id bigint not null auto_increment,
-    nome varchar(100) not null,
-    valor decimal(8,2) not null,
-    validade varchar(10) not null,
-    descricao varchar(200),
-    ativo tinyint not null,
-    primary key(id)
+    id bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    valor DECIMAL(8,2) NOT NULL,
+    validade DATETIME NOT NULL,
+    descricao VARCHAR(200),
+    ativo tinyint NOT NULL
 
 );

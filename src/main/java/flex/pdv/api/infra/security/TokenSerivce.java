@@ -12,7 +12,6 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
-//@Service é uma anotação que indica ao Spring que essa classe é um serviço e que ele deve instanciá-la ao executar o código.
 @Service
 public class TokenSerivce {
 
@@ -32,8 +31,8 @@ public class TokenSerivce {
         try {
             var algoritimo = Algorithm.HMAC256(secret);
             return JWT.require(algoritimo).withIssuer("FlexAPI").build().verify(tokenJWT).getSubject();
-        } catch (JWTVerificationException  exception){
-            throw new RuntimeException("Token JWT invalido ou expirado" + tokenJWT);
+        } catch (JWTVerificationException exception){
+            throw new RuntimeException("Token JWT invalido ou expirado " + tokenJWT);
         }
     }
 

@@ -2,6 +2,7 @@ package flex.pdv.api.domain.produto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -9,9 +10,10 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Table(name = "produtos")
 @Entity(name = "Produtos")
-@Embeddable
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -29,8 +31,8 @@ public class Produto {
     private double valor;
 
     @NotNull
-    @JsonFormat(pattern = "DD/MM/YYYY")
-    private String validade;
+    @Future
+    private LocalDateTime validade;
 
     private String descricao;
     private Boolean ativo;

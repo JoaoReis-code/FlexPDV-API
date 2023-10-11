@@ -1,8 +1,11 @@
 package flex.pdv.api.domain.produto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
 
 public record DadosCadastroProduto(
         @NotBlank
@@ -10,7 +13,7 @@ public record DadosCadastroProduto(
         @NotNull
         double valor,
         @NotNull
-        @JsonFormat(pattern = "DD-MM-YYYY")
-        String validade,
+        @Future
+        LocalDateTime validade,
         String descricao) {
 }

@@ -1,6 +1,7 @@
 package flex.pdv.api.controller;
 
 import flex.pdv.api.domain.produto.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/produto")
+@SecurityRequirement(name = "bearer-key")
 public class ProdutoController {
     @Autowired
     private ProdutoRepository repository;
