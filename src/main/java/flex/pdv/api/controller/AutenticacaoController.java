@@ -4,6 +4,7 @@ import flex.pdv.api.domain.usuario.DadosAutenticacao;
 import flex.pdv.api.domain.usuario.Usuario;
 import flex.pdv.api.infra.security.DadosTokenJWT;
 import flex.pdv.api.infra.security.TokenSerivce;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +25,8 @@ public class AutenticacaoController {
     @Autowired
     private TokenSerivce tokenSerivce;
 
-    //Indica o método da requisição.
     @PostMapping
+    @Operation(summary = "Autenticar usuario na API")
     public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados){
         try {
             var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());

@@ -1,6 +1,7 @@
 package flex.pdv.api.controller;
 
 import flex.pdv.api.domain.produto.*;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+
 @RestController
 @RequestMapping("/produto")
 @SecurityRequirement(name = "bearer-key")
@@ -21,6 +23,7 @@ public class ProdutoController {
 
     @PostMapping
     @Transactional
+    @Operation(summary = "Cadastrar um produto")
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroProduto dados, UriComponentsBuilder uriBuilder){
         var produto = new Produto(dados);
         repository.save(produto);
@@ -31,6 +34,7 @@ public class ProdutoController {
     }
 
     @GetMapping
+    @Operation(summary = "Listar produtos")
     public ResponseEntity<Page<DadosListagemProduto>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         var page = repository.findAllByAtivoTrue(paginacao).map(DadosListagemProduto::new);
         return ResponseEntity.ok(page);
@@ -38,6 +42,7 @@ public class ProdutoController {
 
     @PutMapping
     @Transactional
+    @Operation(summary = "Atualizar produto")
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoProduto dados){
         var produto = repository.getReferenceById(dados.id());
         produto.atualizarInformacoes(dados);
@@ -47,6 +52,7 @@ public class ProdutoController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(summary = "Excluir um produto por id")
     public ResponseEntity excluir(@PathVariable Long id){
         var produto = repository.getReferenceById(id);
         produto.excluir();
@@ -55,6 +61,7 @@ public class ProdutoController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Buscar um produto por id")
     public ResponseEntity detalhar(@PathVariable Long id){
         var produto = repository.getReferenceById(id);
 

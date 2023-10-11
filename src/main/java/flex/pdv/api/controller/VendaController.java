@@ -1,6 +1,7 @@
 package flex.pdv.api.controller;
 
 import flex.pdv.api.domain.venda.*;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -24,18 +25,21 @@ public class VendaController {
 
     @PostMapping
     @Transactional
+    @Operation(summary = "Cadastrar uma venda")
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroVenda dados){
         var dto = venda.vender(dados);
         return ResponseEntity.ok(dto);
     }
 
     @GetMapping
+    @Operation(summary = "Listar vendas")
     public ResponseEntity<Page<DadosDetalhamentoVenda>> listar(@PageableDefault(size = 10, sort = {"id"}) Pageable paginacao){
         var page = repository.findAll(paginacao).map(DadosDetalhamentoVenda::new);
         return ResponseEntity.ok(page);
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "Buscar venda por id")
     public ResponseEntity detalhar(@PathVariable Long id){
         var venda = repository.getReferenceById(id);
 

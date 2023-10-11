@@ -1,6 +1,5 @@
 package flex.pdv.api.domain.produto;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public record DadosDetalhamentoProduto(Long id, String nome, double valor, LocalDateTime validade, String descricao) {
