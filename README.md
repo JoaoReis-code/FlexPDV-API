@@ -36,7 +36,7 @@ Flex PDV é a solução simples e rápida para pequenos empreendedores que desej
 
 
 ## Documentacao Swagger
-
+<img src=https://github.com/JoaoReis-code/FlexPDV-API/assets/112270415/eba33717-9d00-4d31-be8f-0cf462cb99c8>
 
 ## Instalação API
 
