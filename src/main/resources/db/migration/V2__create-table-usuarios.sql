@@ -4,3 +4,4 @@ CREATE TABLE usuarios(
     login VARCHAR(100) NOT NULL,
     senha VARCHAR(100) NOT NULL
 );
+
