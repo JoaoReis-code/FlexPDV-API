@@ -1,4 +1,4 @@
-<h1  align="center">Bem vindo ao Flex PDV</h1>
+<h1  align="center">BEm vindo ao Flex PDV!</h1>
 <p  align="center">
   
 </p>
@@ -36,7 +36,7 @@ Flex PDV é a solução simples e rápida para pequenos empreendedores que desej
 
 
 ## Documentacao Swagger
-<img src=https://github.com/JoaoReis-code/FlexPDV-API/assets/112270415/eba33717-9d00-4d31-be8f-0cf462cb99c8>
+<img src="https://github.com/JoaoReis-code/FlexPDV-API/assets/112270415/7a2f7f20-e31b-4819-8a47-832c7516797d">
 
 ## Instalação API
 
@@ -70,9 +70,13 @@ localhost:8080
 
 O usuário padrão da API
 
-"login" : "admin@teste.com",
+```sh
 
+"login" : "admin@teste.com",
 "senha" : "12345678"
+
+```
+
 
 
 
