@@ -21,22 +21,16 @@ Flex PDV é a solução simples e rápida para pequenos empreendedores que desej
 - Docker -> Conteinerização da aplicação; 
 - DTO -> Objetos de transferência de dados; 
 - MySQL -> Banco de dados; 
-    
-**$ Finalidade_**
-
-- Spring Security -> Proteger a aplicação de acessos não autorizados; 
-- Flyway -> Automatizar o processo de criação e atualização do banco de dados; 
-- Lombok -> Reduzir a quantidade de código necessária para desenvolver a aplicação; 
-- Maven -> Gerenciar as dependências da aplicação;
-- JUnit -> Escrever testes unitários para a aplicação; 
-- Swagger -> Documentar a API da aplicação; 
-- Docker -> Containerizar a aplicação; 
-- DTO -> Representar os dados da aplicação de forma consistente; 
-- MySQL -> Armazenar os dados da aplicação; 
 
 
 ## Documentacao Swagger
 <img src="https://github.com/JoaoReis-code/FlexPDV-API/assets/112270415/7a2f7f20-e31b-4819-8a47-832c7516797d">
+
+## Pré-requisitos
+
+- Java 17
+- Docker
+- Mysql
 
 ## Instalação API
 
