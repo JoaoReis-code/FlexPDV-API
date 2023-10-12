@@ -1,6 +1,6 @@
-<h1  align="center">BEm vindo ao Flex PDV!</h1>
+<h1  align="center">Bem vindo ao Flex PDV!</h1>
 <p  align="center">
-  
+  <img src=https://github.com/JoaoReis-code/FlexPDV-API/assets/112270415/f540d920-7401-4eee-9b0e-56df6b2d8a28>
 </p>
 <p display="inline-block">
  
